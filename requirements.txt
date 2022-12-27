@@ -1,8 +1,7 @@
-Flask==1.1.1
-sklearn
-pandas>=0.19
-numpy==1.9.2
-matplotlib==3.0.3
+Flask
+pandas
+numpy
+matplotlib
 xgboost
 certifi==2019.11.28
 Click==7.0
@@ -14,5 +13,5 @@ Werkzeug==0.15.5
 tpot>=0.11.0
 seaborn==0.9.0
 cloudpickle>=0.6.0
-scikit-learn==0.20.0
+scikit-learn
 joblib==0.14.0
