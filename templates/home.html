@@ -1,3 +1,54 @@
-</h1>
-Hello SRB
-</h1>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Bengaluru House Price Prediction by SB</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+    <script src="location.js"></script>
+        <link href="https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css">
+        <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+        <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+</head>
+
+<body>
+
+  <div class="login">
+	<h1>Benguluru House Price Prediction</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    <div> 
+      <input type="text" name="bhk" placeholder="BHK" required="required" />
+      <br><br>
+
+      <input type="text" name="total_sqft" placeholder="Total Sqft" required="required" />
+      <br><br>
+
+      <select style="height:20px;width:180px" name="area_type" id="area_type">
+        <option value="" disabled="disabled" required="required" selected="selected">Choose Area Type</option>
+          <option>super built-up area</option>
+          <option>built-up area</option>
+          <option>plot area</option>
+          <option>carpet area</option>
+      </select>
+      <br><br>
+
+    </div>
+	  <div>
+    <select  style="height:20px;width:180px" class="location" name="uiLocations" id="uiLocations">
+      <option value="" selected="selected">Choose Location</option>
+            <option>Electronic City</option>
+    </select>
+    <br><br>
+    </div>
+
+      <button style="height:30px;width:180px" type="submit" autofocus ="autofocus" class="btn btn-primary btn-block btn-large">Predict Price</button>
+    </form>
+    <br><br>
+
+  </div>
+ {{prediction_text}}
+
+</body>
+</html>
