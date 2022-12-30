@@ -3,8 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Bengaluru House Price Prediction by SB</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
-    <script src="location.js"></script>
         <link href="https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css">
         <link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
@@ -25,23 +23,24 @@
       <input type="text" name="total_sqft" placeholder="Total Sqft" required="required" />
       <br><br>
 
-      <select style="height:20px;width:180px" name="area_type" id="area_type">
+      <select style="height:20px;width:180px" name="area_types" id="Area_Types">
         <option value="" disabled="disabled" required="required" selected="selected">Choose Area Type</option>
-          <option>super built-up area</option>
-          <option>built-up area</option>
-          <option>plot area</option>
-          <option>carpet area</option>
+        {% for area_type in Area_Types %}
+          <option value="{{ area_type }}">{{ area_type }}</option>
+        {% endfor %}
       </select>
       <br><br>
 
-    </div>
-	  <div>
-    <select  style="height:20px;width:180px" class="location" name="uiLocations" id="uiLocations">
-      <option value="" selected="selected">Choose Location</option>
-            <option>Electronic City</option>
-    </select>
-    <br><br>
-    </div>
+      </div>
+	    <div>
+      <select  style="height:20px;width:180px" class="location" name="locations" id="Locations">
+        <option value="" disabled="disabled" required="required" selected="selected">Choose Location</option>
+        {% for location in Locations %}
+          <option value="{{ location }}">{{ location }}</option>
+        {% endfor %}
+      </select>
+      <br><br>
+      </div>
 
       <button style="height:30px;width:180px" type="submit" autofocus ="autofocus" class="btn btn-primary btn-block btn-large">Predict Price</button>
     </form>
